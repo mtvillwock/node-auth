@@ -36,13 +36,22 @@ body        { padding-top:80px; word-wrap:break-word; }
             <strong>name:</strong> <%= user.facebook.name %>
             </p>
 
-            <h3 class="text-primary"><span class="fa fa-Twitter"></span> Twitter</h3>
+            <h3 class="text-info"><span class="fa fa-twitter"></span> Twitter</h3>
 
             <p>
             <strong>id:</strong> <%= user.twitter.id %><br>
             <strong>token:</strong> <%= user.twitter.token %><br>
             <strong>username:</strong> <%= user.twitter.username %><br>
             <strong>display name:</strong> <%= user.twitter.displayName %>
+            </p>
+
+            <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
+
+            <p>
+            <strong>id:</strong> <%= user.google.id %><br>
+            <strong>token:</strong> <%= user.google.token %><br>
+            <strong>email:</strong> <%= user.google.email %>
+            <strong>name:</strong> <%= user.google.name %><br>
             </p>
 
           </div>
