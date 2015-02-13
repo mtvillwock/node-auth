@@ -17,6 +17,7 @@
   mongoose.connect(configDB.url);
 
   require('./config/passport')(passport);
+  require('./config/secrets.js');
 
   app.use(morgan('dev'));
   app.use(cookieParser());
@@ -24,7 +25,7 @@
 
   app.set('view-engine', 'ejs');
 
-  app.use(session({ secret: 'bobloblawslawblog' }));
+  app.use(session({ secret: process.env.SESSION_SECRET }));
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(flash());
