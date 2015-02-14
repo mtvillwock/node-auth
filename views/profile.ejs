@@ -21,38 +21,63 @@ body        { padding-top:80px; word-wrap:break-word; }
           <div class="well">
             <h3><span class="fa fa-user"></span> Local</h3>
 
-            <p>
-            <strong>id: </strong><%= user.id %><br>
-            <strong>email: </strong><%= user.local.email %><br>
-            <strong>password: </strong><%= user.local.password %><br>
-            </p>
+            <% if(user.local.email) { %>
+              <p>
+              <strong>id: </strong><%= user.id %><br>
+              <strong>email: </strong><%= user.local.email %><br>
+              <strong>password: </strong><%= user.local.password %><br>
+              </p>
+
+              <a class="btn btn-default" href="/unlink/local">Unlink</a>
+            <% } else { %>
+              <a class="btn btn-default" href="/connect/local">Connect Local</a>
+            <% } %>
 
             <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
 
-            <p>
-            <strong>id:</strong> <%= user.facebook.id %><br>
-            <strong>token:</strong> <%= user.facebook.token %><br>
-            <strong>email:</strong> <%= user.facebook.email %><br>
-            <strong>name:</strong> <%= user.facebook.name %>
-            </p>
+            <% if(user.facebook.token) { %>
+              <p>
+              <strong>id:</strong> <%= user.facebook.id %><br>
+              <strong>token:</strong> <%= user.facebook.token %><br>
+              <strong>email:</strong> <%= user.facebook.email %><br>
+              <strong>name:</strong> <%= user.facebook.name %>
+              </p>
+
+              <a class="btn btn-primary" href="/unlink/facebook">Unlink</a>
+            <% } else { %>
+              <a class="btn btn-primary" href="/connect/facebook">Connect Facebook</a>
+            <% } %>
 
             <h3 class="text-info"><span class="fa fa-twitter"></span> Twitter</h3>
 
-            <p>
-            <strong>id:</strong> <%= user.twitter.id %><br>
-            <strong>token:</strong> <%= user.twitter.token %><br>
-            <strong>username:</strong> <%= user.twitter.username %><br>
-            <strong>display name:</strong> <%= user.twitter.displayName %>
-            </p>
+            <% if(user.twitter.token) { %>
+              <p>
+              <strong>id:</strong> <%= user.twitter.id %><br>
+              <strong>token:</strong> <%= user.twitter.token %><br>
+              <strong>username:</strong> <%= user.twitter.username %><br>
+              <strong>display name:</strong> <%= user.twitter.displayName %>
+              </p>
+
+              <a class="btn btn-info" href="/unlink/twitter">Unlink</a>
+            <% } else { %>
+              <a class="btn btn-info" href="/connect/twitter">Connect Twitter</a>
+            <% } %>
+
 
             <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
 
-            <p>
-            <strong>id:</strong> <%= user.google.id %><br>
-            <strong>token:</strong> <%= user.google.token %><br>
-            <strong>email:</strong> <%= user.google.email %>
-            <strong>name:</strong> <%= user.google.name %><br>
-            </p>
+            <% if(user.google.token) { %>
+              <p>
+              <strong>id:</strong> <%= user.google.id %><br>
+              <strong>token:</strong> <%= user.google.token %><br>
+              <strong>email:</strong> <%= user.google.email %>
+              <strong>name:</strong> <%= user.google.name %><br>
+              </p>
+
+              <a class="btn btn-danger" href="/unlink/google">Unlink</a>
+            <% } else { %>
+              <a class="btn btn-danger" href="/connect/google">Connect Google</a>
+            <% } %>
 
           </div>
         </div>
